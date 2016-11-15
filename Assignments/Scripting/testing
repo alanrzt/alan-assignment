@@ -1,0 +1,7 @@
+#!/bin/bash 
+#scripting
+name=$(date +%T%F%Z)
+mkdir $name 
+cd /
+cd tmp
+mv test /home/alan/$name

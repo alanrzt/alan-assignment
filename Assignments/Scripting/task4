@@ -1,0 +1,10 @@
+#!/bin/bash
+a=$1
+b=$(date +%Y%m%d%H%M%S)
+mkdir $b
+echo $a
+while IFS= read -r line
+do
+      [ -d $line ] && cp -rp $line $b
+done <"$a"
+tar cvfz backup.tar $b

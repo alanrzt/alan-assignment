@@ -1,0 +1,20 @@
+#!/bin/bash
+#sort+0kb+delete
+a=$1
+b=$2
+c=$(pwd)
+ls -RlSr $a >/home/alan/sort
+awk '{print $5,$9}' /home/alan/sort >kb 
+sort -k1,1nr -k2,2 kb > kb1
+grep "^[0-9]" kb1 > kb2
+cat kb2
+awk '{print $2}' kb2 > kb3
+z=kb2
+cat kb2
+awk '$1==0' kb2 > another
+echo "0 kb"
+cat another
+awk '{print $2}' another > another1
+awk '{print}' another1
+find $a  -type f -size 0 -exec rm -i {} \;
+[ -f "$c/$b" ] && mv "$c/$b" razorthink_$(echo "$c" | sed -r 's/[/]+/-/g')

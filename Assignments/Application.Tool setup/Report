@@ -1,0 +1,38 @@
+Task 1. Fork GIT repository from the GIT TEST REPO URL
+           This is done by forking the given URL to my github account.Thus I got access to  https://github.com/arunpratheep92/testRepo .
+           Step 1:Copying the given URL
+           Step 2: Adding to my repository.
+Task 2. Merge “Branch 2” with “Master” and resolve conflicts if any using a pull request.
+             I used commands for merging branch2 with master in the terminal. The occured conflict was resolved as specified. 
+            Steps  :cd testRepo
+                       git checkout master
+                       git merge branch2             #conflict
+                       gedit Scene\ 7.txt
+                       git add Scene\ 7.txt
+                       git commit -m "conflict solved"
+                       git push origin master
+
+Task 3. Revert back your code to “Scene 3 Good Commit” commit.
+            Steps :git checkout branch3
+                       git checkout aa79262f8cd727df6a1f77469ce8a7f2d50180e7 Scene\ 3.txt
+                       git add Scene\ 3.txt
+                       commit -m "Revert good commit"
+                       push origin branch3
+
+Task 4. Create a new branch ‘Branch4’ containing all the files of “Master”
+            I also learned to create new branch, both with github and terminal.
+            Steps :git checkout -b branch4    #adding data
+                       git push origin branch4
+
+Task 5. Create a new file called ‘Bad File’ in Branch4 and commit it locally. Also add few files to git ignore and commit the changes.
+           Steps :gedit badfile
+                      git add badfile
+                      git commit -m "4th line,commit3"    
+                      gedit .gitignore(*.txt)
+                      git add .gitignore(*.txt)
+                      git commit -m "ignore file"
+                      git push origin branch3    
+
+Task 6. Now revert “Bad File” commit and push other changes if any.
+           Steps : git reset --hard HEAD~1
+                       git push origin branch3

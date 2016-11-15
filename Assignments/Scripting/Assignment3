@@ -1,0 +1,16 @@
+Task 1 steps:
+1. Creating a username and deletion of password.
+    sudo delete passwrd <razorthink>
+2.Assigning privileges by commant "root ALL=(ALL:ALL) ALL" and razorthink ALL =          (ALL) NOPASSWRD.
+
+Task 2 steps:
+1. Installing tiger tool setup.
+2. Copyying auditing report to another file.
+3. Mailing report and running cronjob.
+//  Another command  sudo tiger | mail -s "tiger output" alan.alexander@razorthink.net
+    was also used.
+
+Task 3 steps:
+1. Installed lynis tool by using sudo apt-get lynis.
+2. Getting out warnigs, suggestions and report. 
+

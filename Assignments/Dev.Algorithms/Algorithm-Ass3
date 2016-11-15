@@ -1,0 +1,70 @@
+Snake and Ladder problem:
+1. Assigning the array as: a[]={0,0,19,0,3,0,0,0,0,0,15,0,0,0,0,0,-13,0,-12,9,-12,0,0,0,0,0,-26,0,0,0};
+2.The positive nos indicate ladders and the negative nos indicate snake.
+3.Zeros are position with no change.
+4.Ladders and snakes can be found by useing an if else condition.
+  for(i=1;i<31;i++)
+    {
+     if(a[i]>0)
+     l=l++;
+     if(a[i]<0)
+     s=s++;
+    }
+    printf("The total number of ladders:%d\n",l);
+    printf("The totoal number of snakes:%d\n",s);
+5. For finding the minimum dice rolls:
+   Here,we are tabulating the ladder with highest end value and assignung it.
+   while(p<30)
+ {
+   n++;
+   if(p==3 || p==5 || p==11 || p==20)
+   p=p+a[p];
+   ll=0;
+   for(i=p;i<(p+5);i++)
+     {
+      if(a[i]>ll)
+	 {
+	   x=i-p+1;
+	   ll=a[i];
+	 }
+     }
+     if(ll>0)
+	{
+	  p=p+x-1;
+	  p=p+ll;
+	}
+	else
+	p=p+6;
+	while(a[p]<0)
+	  {
+	   --p;
+	  }
+ }
+ printf("Throws without snakebite:%d\n",n);
+6.For finding minimum dice rolls with one snake bite:
+  while(p<30)
+ {
+  x++;
+   for(j=0;j<6;j++)
+    {
+     if(a[p]>0)
+       {
+	 p=p+a[p];
+	 break;
+       }
+     if(a[p]<0 && f!=1)
+       {
+	 for(i=p;i<(p+5);i++)
+	   {
+	    if(a[i]>ss && a[i]!=0)
+	      {
+	       ss=a[i];
+	      }
+	   }
+	   p=p+ss;
+	   f=1;
+	   break;
+       }
+       ++p;
+    }
+   
