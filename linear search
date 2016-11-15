@@ -1,0 +1,29 @@
+Linear search is used to search for a specific value in an arrangement of sorted or unsorted file.
+
+Algorithm
+
+1. Start
+2. Enter the no of variables in list (array).
+3. Enter all values.
+4. Enter the variable to be searched.
+5. Search for the given variable in the array using a for loop.
+   for (c = 0; c < n; c++)
+   {
+      if (array[c] == search)     /* if required element found */
+      {
+         printf("%d is present at location %d.\n", search, c+1);
+         break;
+      }
+   }
+   if (c == n)
+      printf("%d is not present in array.\n", search)
+6. Stop
+
+Time Complexity 
+
+Here, the whole loop has to be iterated until the needed element is found. Hence, time taken varies linearly with the size of the array. Therefore, the time complexity is O(n).
+
+References
+
+1.http://www.programmingsimplified.com/c/source-code/c-program-linear-search
+2.http://www.go4expert.com/articles/beginners-guide-time-complexity-o-t29211/

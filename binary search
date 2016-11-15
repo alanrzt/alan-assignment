@@ -1,0 +1,38 @@
+Binary search is used to find a specific variable from a list of sorted varaiables/values.
+
+Algorithm
+
+1. Start
+2. Enter the no of variables in list (array).
+3. Enter all values.
+4. Enter the variable to be searched.
+5. Specifying first,last and middle as:
+   first = 0;
+   last = n - 1;
+   middle = (first+last)/2;
+6. Allocating the position of first,last and middle using while and if conditions.
+   while (first <= last) {
+      if (array[middle] < search)
+         first = middle + 1;    
+      else if (array[middle] == search) {
+         printf("%d found at location %d.\n", search, middle+1);
+         break;
+      }
+      else
+         last = middle - 1;
+ 
+      middle = (first + last)/2;
+   }
+   if (first > last)
+      printf("Not found! %d is not present in the list.\n", search);
+7. Stop
+
+Time Complexity
+
+It searches an element in a sorted array. The way it works is, divide the array into half, and compare the element to be searched with the middle element of the array. If they are equal, we can find it. If the middle element is greater, repeat the search on left sub-array else repeat the search on right sub-array.
+Thus binary search is having Logarithmic Complexity O(log n)
+
+References
+
+1.http://www.programmingsimplified.com/c/source-code/c-program-binary-search
+2.http://www.go4expert.com/articles/beginners-guide-time-complexity-o-t29211/
