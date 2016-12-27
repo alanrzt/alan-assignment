@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Rectangle{
+    private int length;
+    private int width;
+
+    Rectangle(){
+        this.length=0; // assuming default length=0
+        this.width=0; // assuming default width=0
+    }
+
+    Rectangle(int length, int width){
+        this.length=length;
+        this.width=width;
+    }
+
+    public int getlength()
+    {
+        return length;
+    }
+
+    public int getwidth()
+    {
+     return width;
+    }
+
+    int area(){
+        return length*width;
+    }
+    int perimeter(){
+        return 2*(length+width);
+    }
+}
+
+
+// test class
+public class TestRectangle{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter length and breadth: ");
+        int l = sc.nextInt();
+        int b = sc.nextInt();
+        Rectangle r1= new Rectangle(l,b);
+        int x=r1.getlength();
+        int y=r1.getwidth();
+        System.out.println("Area of r1: "+ r1.area());
+        Rectangle r2= new Rectangle(l,b);
+        System.out.println("Perimetr of r2: "+ r2.perimeter());
+    }
+}
